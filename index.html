@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планировщик задач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="authScreen" class="auth-screen">
+        <div class="auth-box">
+            <h1>📋 Планировщик задач</h1>
+            <p class="auth-subtitle">Войдите или зарегистрируйтесь</p>
+
+            <input type="text" id="authLogin" placeholder="Логин">
+            <input type="password" id="authPassword" placeholder="Пароль">
+
+            <button id="loginBtn">Войти</button>
+            <button id="registerBtn" class="btn-secondary">Зарегистрироваться</button>
+        </div>
+    </div>
+
+    <div id="appScreen" class="container" style="display: none;">
+        <div class="app-header">
+            <h1>📋 Планировщик задач</h1>
+            <div class="user-info">
+                <span id="userName"></span>
+                <button id="logoutBtn" class="btn-logout">Выйти</button>
+            </div>
+        </div>
+
+        <div class="form-box">
+            <input type="text" id="title" placeholder="Название задачи">
+            <textarea id="desc" placeholder="Описание задачи"></textarea>
+            <input type="date" id="date">
+            <select id="status">
+                <option value="Новая">Новая</option>
+                <option value="В работе">В работе</option>
+                <option value="Выполнена">Выполнена</option>
+            </select>
+            <button id="saveBtn">Добавить задачу</button>
+        </div>
+
+        <div class="tools">
+            <input type="text" id="search" placeholder="Поиск по названию...">
+            <select id="filter">
+                <option value="all">Все статусы</option>
+                <option value="Новая">Новая</option>
+                <option value="В работе">В работе</option>
+                <option value="Выполнена">Выполнена</option>
+            </select>
+            <select id="sort">
+                <option value="none">Без сортировки</option>
+                <option value="date">По сроку выполнения</option>
+            </select>
+        </div>
+
+        <div id="taskList"></div>
+        <p id="emptyMsg" class="empty">Список задач пуст. Добавьте первую задачу 👆</p>
+    </div>
+
+    <a href="tel:+78001234567" class="support-badge">
+        📞 Поддержка: +7 (800) 123-45-67
+    </a>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
